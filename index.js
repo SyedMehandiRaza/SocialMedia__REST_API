@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const helmet = require("helmet");
 const dotenv = require("dotenv");
-const userRoute = require("./routes/user");
+const userRoute = require("./routes/users");
+const authRoute = require("./routes/auth");
 
 
 const PORT = 8800;
@@ -29,7 +30,7 @@ app.use(helmet());
 app.use(morgan('combined'));
 
 app.use("/api/users",userRoute)
-
+app.use("/api/auth",authRoute)
 
 
 
