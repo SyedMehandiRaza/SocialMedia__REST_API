@@ -5,6 +5,7 @@ const helmet = require("helmet");
 const dotenv = require("dotenv");
 const userRoute = require("./routes/users");
 const authRoute = require("./routes/auth");
+const postRoute = require("./routes/post");
 
 
 const PORT = 8800;
@@ -31,11 +32,7 @@ app.use(morgan('combined'));
 
 app.use("/api/users",userRoute)
 app.use("/api/auth",authRoute)
-
-
-
-
-
+app.use("/api/post",postRoute)
 
 
 
